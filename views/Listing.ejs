@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>Fetch Data</title>
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        .table-data {
+            position: relative;
+            left: 150px;
+            top: 100px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+    </style> -->
+</head>
+<body>
+    <form action="/user" method="" class="needs-validation container"  novalidate>
+    <div class="table-data"></div>
+    <h2>Display Data using Node.js & MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile No.</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>PanCard No.</th>
+            <th>Aadhar No.</th>
+            <th>Action</th>
+        </tr>
+        <%
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.emp_fname %></td>
+            <td><%=data.emp_lname %></td>
+            <td><%=data.mobile_no %></td>
+            <td><%=data.email_id %></td>
+            <td><%=data.birth_date %></td>
+            <td><%=data.gender %></td>
+            <td><%=data.address %></td>
+            <td><%=data.city%></td>
+            <td><%=data.pincode%></td>
+            <td><%=data.pan_no%></td>
+            <td><%=data.adhar_no%></td>     
+            <td>
+                <a href="/registration/<%= data.id %>" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                <a href="/delete/<%= data.id %>" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        <%  }) %>
+    </table>
+    </form>
+</body>
+</html>
