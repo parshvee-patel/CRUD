@@ -5,16 +5,6 @@ const mysql = require('mysql');
 var app = express();
 const db = require('./database');
 
-require('dotenv').config()
-
-const connection = mysql.createConnection(
-    {
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_DATABASE
-    }
-)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
