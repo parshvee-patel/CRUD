@@ -1,24 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require("mysql");
-//const ejs = require('ejs');
+const mysql = require('mysql');
 
 var app = express();
+const db = require('./database');
+
+require('dotenv').config()
 
 const connection = mysql.createConnection(
     {
-        host: "95.217.158.21",
-        user: "parshvee_patel",
-        password: "BNYw#nD$2bRr",
-        database: "parshvee_test"
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_DATABASE
     }
 )
-connection.connect(function (err) {
-    if (err) {
-        return console.error('error: ' + err.message);
-    }
-    console.log('Connected to the MySQL server.');
-});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -33,7 +29,6 @@ app.get('/registration', function (req, res) {
 })
 
 app.post('/registration', function (req, res, next) {
-    console.log(req.body)
     const emp_fname = req.body.fname;
     const emp_lname = req.body.lname;
     const mobile_no = req.body.mobile_no;
@@ -90,7 +85,6 @@ app.post('/registration/:id', function (req, res, next) {
     const adhar_no = req.body.adhar_no;
 
     var sql = "UPDATE users SET emp_fname='"+emp_fname+"', emp_lname='"+emp_lname+"', mobile_no='"+mobile_no+"', email_id='"+email_id+"', birth_date='"+birth_date+"',gender='"+gender+"',address='"+address+"', city='"+city+"', pincode='"+pincode+"', pan_no='"+pan_no+"', adhar_no='"+adhar_no+"' WHERE id="+req.params.id;
-    console.log('update query', sql)
     connection.query(sql, function(err) {
         if(err)
         {                            
