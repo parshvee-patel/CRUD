@@ -4,9 +4,12 @@
     <title> Registeration Form </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+    <script type="text/javascript">     
         (function () {
             'use strict';
             window.addEventListener('load', function () {
@@ -63,9 +66,9 @@
                             Please enter vaild Email id.  
                         </div> 
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="_birth-date">Date of Birth </label>
-                        <input type="datepicker" name="birth_date" id="_birth-date" class="form-control" required>
+                        <input type="text" name="birth_date" id="_birth-date" class="form-control date-input " data-date-format="mm/dd/yy" required>
                         <div class="invalid-feedback">  
                             Please enter Date of Birth.  
                         </div> 
@@ -112,12 +115,6 @@
                         <label class="form-group-label"> Aadhar No.: </label>
                         <input class="form-group" type="text" name="adhar_no" id="_adharno" minlength="8" required>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="file" class="col-md-3 control-label">Profile Image</label>
-                        <div class="col-sm-9">
-                            <input class="form-control" type="file" name="uploaded_image" accept=""/>
-                        </div>
-                    </div>   -->
                     <button type="submit" class="btn btn-success">Sign Up</button>
                 </form>
             </div>
@@ -125,6 +122,8 @@
     </div>
 
 </body>
+
+    
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
