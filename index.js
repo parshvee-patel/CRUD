@@ -1,9 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+import express from 'express';
+import bodyParser from 'body-parser';
 
-var app = express();
-
-const connection = require('./config/database');
+const app = express();
 const router = require('./router/user');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(router);
 
 //Listing port
-var port = 3000;
+const port = 3000;
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });

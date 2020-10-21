@@ -1,20 +1,19 @@
-const express = require("express");
-const userController = require("../controller/user_controller");
+import express from 'express';
+import userController from '../controller/user_controller';
 const router = express.Router();
 
 router.get('/user', userController.getUser);
+import registerValidation from "../validation/userValidation";
 
-const {addUserValidation} = require('../config/user_validation');
-
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.render('home');
 })
 
-router.get('/registration', function (req, res) {
+router.get('/registration', (req, res) => {
     res.render('registration');
 })
 
-router.post('/registration',addUserValidation, userController.postRegistar);
+router.post('/registration',registerValidation, userController.postRegistar);
 
 router.get('/registration/:id', userController.getData);
 
