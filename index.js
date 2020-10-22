@@ -1,8 +1,11 @@
+//* Import 3rd Party module
 import express from 'express';
 import bodyParser from 'body-parser';
 
+//* Import external Module
+import router from './router/user';
+
 const app = express();
-const router = require('./router/user');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
