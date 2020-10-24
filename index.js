@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 
 //* Import external Module
 import router from './router/user';
+import imageRouter from './router/uploadFile';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.set('view engine', 'ejs');
 
 //Get router module
 app.use(router);
+app.use(imageRouter);
 
 //Listing port
 const port = 3000;

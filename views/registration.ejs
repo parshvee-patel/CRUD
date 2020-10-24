@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <title> Registeration Form </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -23,6 +22,10 @@
                 }, false);
             }, false);
         })();  
+        $('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: '-3d'
+    });
     </script>
 </head>
 
@@ -66,12 +69,14 @@
                             Please enter vaild Email id.  
                         </div> 
                     </div>
-                    <div class="form-group ">
-                        <label for="_birth-date">Date of Birth </label>
-                        <input type="text" name="birth_date" id="_birth-date" class="form-control date-input " data-date-format="mm/dd/yy" required>
-                        <div class="invalid-feedback">  
-                            Please enter Date of Birth.  
-                        </div> 
+                
+                    <div class="form-group "></div>
+                    <label for="_birth-date">Date of Birth</label> 
+                    <div class="input-group date" data-provide="datepicker"> 
+                        <input type="text" class="form-control" name="birth_date" required> 
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
                     </div>
                 
                     <div class="form-group">  
@@ -115,23 +120,20 @@
                         <label class="form-group-label"> Aadhar No.: </label>
                         <input class="form-group" type="text" name="adhar_no" id="_adharno" minlength="8" required>
                     </div>
+                    <!-- <div class="form-group">
+                        <label for="image"> Upload Image </label>
+                        <input id="image" class="form-control-file" type="file" name="image"> 
+                    </div>
+                    -->
                     <button type="submit" class="btn btn-success">Sign Up</button>
                 </form>
             </div>
         </div>
     </div>
 
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-
+</body>
 </html>

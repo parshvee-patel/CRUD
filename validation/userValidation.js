@@ -4,7 +4,7 @@ const schema =  Joi.object().keys({
         lname: Joi.string().alphanum().required(),
         mobile_no: Joi.string().max(10).min(10).message('Invalid amaobile Number').required(),
         email_id: Joi.string().email().required(),
-        birth_date: Joi.string().required(),
+        birth_date: Joi.required(),
         gender: Joi.string().required(),
         address: Joi.string().max(150).required(),
         city: Joi.string().required(),

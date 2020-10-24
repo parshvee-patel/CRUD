@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Upload File</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/uploadImage" method="POST" class="needs-validation container" enctype="multipart/form-data"  >
+    <div class="container p-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="image"> Upload Image </label>
+                                <input id="image" class="form-control-file" type="file" name="image" > </br>
+                                <!-- <a  class="btn btn-danger">Registration</a>  -->
+                                <button type="submit" class="btn btn-success">Upload</button>
+
+                            </div>
+            
+                        </div>
+                    </div>      
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

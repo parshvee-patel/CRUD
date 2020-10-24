@@ -1,5 +1,6 @@
 
 import connection from '../config/database';
+import  uploadFile from '../router/uploadFile';
 
 // get all  user 
 const getUser = async (req,res,next) => {
@@ -12,7 +13,7 @@ const getUser = async (req,res,next) => {
 
 //Get registration data using id
 const getData = async (req,res,next) => {
-    const sql = await 'SELECT * FROM users';
+    const sql = await 'SELECT * FROM users where id = '+req.params.id;
     connection.query(sql, (err, userData) => {
         if (err) throw err;
         res.send(userData);
@@ -35,19 +36,12 @@ const postRegistar = async (req,res,next) => {
 
     const sql = await "INSERT INTO users (emp_fname, emp_lname, mobile_no, email_id,birth_date,gender, address, city, pincode, pan_no, adhar_no ) VALUES ('" + emp_fname + "','" + emp_lname + "','" + mobile_no + "','" + email_id + "','" + birth_date + "','" + gender + "','" + address + "','" + city + "','" + pincode + "','" + pan_no + "','" + adhar_no + "')";
     connection.query(sql, (err) => {
-        if (err) {
-            res.json({
-                status:false,
-                message:'there are some error with query'
-            })
-          }else{
-              res.json({
-                status:true,
-                data:results,
-                message:'user registered sucessfully'
-            })
-          }
-        });    
+        if(err)
+        {                            
+            return console.error('error: ' + err.message);
+        }
+        res.send({"Code":"201", "Message":"Data Inserted Successfuly"});
+     })    
 }
 
 //Post registration data using id

@@ -14,13 +14,12 @@ router.get('/', async (req, res) => {
 
 //* Call Registration router page with get method
 router.get('/registration', async (req, res) => {
-    const registration = new Registration(req.body);
-    try {
-        await registration.save();
-        res.status(201).send(registration);
-    } catch (error) {
-        res.status(500).send(error);
-    }
+    res.render('registration');
+})
+
+//* image Upload get method
+router.get('/uploadImage', async (req, res) => {
+    res.render('uploadImage');
 })
 
 //* Call Registration with post method
